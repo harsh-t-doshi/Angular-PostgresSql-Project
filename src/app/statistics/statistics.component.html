@@ -1,0 +1,48 @@
+<h1 align="center">Statistics</h1>
+<h1 *ngIf="error == 1" align="center">Dealer Not Found</h1>
+<ul>
+  <li *ngIf="dealers">
+    <table class="center-block" border="2">
+      <tr>
+        <th>Messages_sent</th>
+        <th>Tasks_approved</th>
+        <th>Mros_created</th>
+      </tr>
+      <tr *ngIf="error == 1">
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr *ngIf="error == 0">
+        <th style="text-align:center">
+          {{ dealers.messages_sent }}
+        </th>
+        <th style="text-align:center">
+          {{ dealers.tasks_approved }}
+        </th>
+        <th style="text-align:center">{{ dealers.mros_created }}</th>
+      </tr>
+    </table>
+
+    <tr class="txt">
+      Enter Dealer ID
+      <input type="text" #tbName id="tbName" />
+      <p>
+        <button
+          type="submit"
+          (click)="changeLabelName(lblName.id, tbName.value)"
+          id="bt"
+          class="btn"
+        >
+          Get Info
+        </button>
+      </p>
+
+      <ng-container>
+        <p>
+          <label #lblName id="lblName"> </label>
+        </p>
+      </ng-container>
+    </tr>
+  </li>
+</ul>

@@ -1,0 +1,25 @@
+.pic {
+  width: 100%;
+  height: auto;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #d3d3d3;
+  color: black;
+  font-size: 30px;
+}
+.para {
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  margin-left: 85px;
+  margin-right: 85px;
+}
+li {
+  position: relative;
+  padding-left: 21px;
+  margin: 0 0 3px 0;
+  margin-bottom: 50px;
+}
