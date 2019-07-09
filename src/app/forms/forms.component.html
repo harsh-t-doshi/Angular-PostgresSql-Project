@@ -1,0 +1,22 @@
+<h1 align="center">DATA</h1>
+<table class="center-block" border="2">
+  <tr class="txt">
+    Enter Dealer ID
+    <input type="text" #tbName id="tbName" />
+  </tr>
+  <tr></tr>
+  <tr class="txt">
+    Enter Vehicle ID
+    <input type="text" #tbName id="tbName" />
+  </tr>
+  <p>
+    <button
+      type="submit"
+      (click)="changeLabelName(lblName.id, tbName.value)"
+      id="bt"
+      class="btn"
+    >
+      ADD DATA
+    </button>
+  </p>
+</table>

@@ -7,13 +7,15 @@ import { NavComponent } from "./nav/nav.component";
 import { HomeComponent } from "./home/home.component";
 import { StatisticsComponent } from "./statistics/statistics.component";
 import { AboutComponent } from './about/about.component';
+import { FormsComponent } from './forms/forms.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
     StatisticsComponent,
-    AboutComponent
+    AboutComponent,
+    FormsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
