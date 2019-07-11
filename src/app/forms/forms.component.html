@@ -2,17 +2,17 @@
 <table class="center-block" border="2">
   <tr class="txt">
     Enter Dealer ID
-    <input type="text" #tbName id="tbName" />
+    <input type="text" #dealerID id="dealerID" />
   </tr>
   <tr></tr>
   <tr class="txt">
     Enter Vehicle ID
-    <input type="text" #tbName id="tbName" />
+    <input type="text" #vehicleID id="vehicleID" />
   </tr>
   <p>
     <button
       type="submit"
-      (click)="changeLabelName(lblName.id, tbName.value)"
+      (click)="insertDriverData(dealerID.value, vehicleID.value)"
       id="bt"
       class="btn"
     >
