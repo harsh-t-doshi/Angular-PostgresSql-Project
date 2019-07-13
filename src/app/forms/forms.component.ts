@@ -7,32 +7,33 @@ import { FormsService } from "./forms.service";
   styleUrls: ["./forms.component.css"]
 })
 export class FormsComponent implements OnInit {
+  dealers: Object;
+
+  error = 0;
   public driverID;
   public vehicleID;
-  error = 0;
   constructor(private formService: FormsService) {}
   insertDriverData(driverID, vehicleID) {
-    this.error = 0;
     this.driverID = driverID;
     this.vehicleID = vehicleID;
-    this.formService.postAPIData(this.driverID, this.vehicleID).subscribe(
-      response => {
-        console.log("response from post data is ", response);
-      },
-      error => {
-        console.log("error during post is ", error);
-      }
-    );
+    if (this.driverID && this.vehicleID) {
+      this.formService
+        .postAPIData(this.driverID, this.vehicleID)
+        .subscribe(response => {
+          console.log(response);
+        });
+    } else {
+      this.error = 1;
+      alert("Enter Valid Data");
+      console.log("Invalid Data!");
+    }
+    this.formService.getAPIData().subscribe(response => {
+      this.dealers = response["reslt"];
+    });
   }
   ngOnInit() {
-    console.log();
-    this.formService.postAPIData(this.driverID, this.vehicleID).subscribe(
-      response => {
-        console.log("response is ", response);
-      },
-      error => {
-        console.log("error is ", error);
-      }
-    );
+    this.formService.getAPIData().subscribe(response => {
+      this.dealers = response["reslt"];
+    });
   }
 }

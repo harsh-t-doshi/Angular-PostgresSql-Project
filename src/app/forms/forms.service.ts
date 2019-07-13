@@ -12,9 +12,12 @@ export class FormsService {
   }
 
   postAPIData(dID, vID) {
-    return this.http.post("/api/postData", {
-      driverId: dID,
-      vehicleId: vID
-    });
+    if (!dID || !vID) {
+    } else {
+      return this.http.post("/api/postData", {
+        driverId: dID,
+        vehicleId: vID
+      });
+    }
   }
 }

@@ -1,22 +1,39 @@
 <h1 align="center">DATA</h1>
-<table class="center-block" border="2">
-  <tr class="txt">
-    Enter Dealer ID
-    <input type="text" #dealerID id="dealerID" />
-  </tr>
-  <tr></tr>
-  <tr class="txt">
-    Enter Vehicle ID
-    <input type="text" #vehicleID id="vehicleID" />
-  </tr>
-  <p>
-    <button
-      type="submit"
-      (click)="insertDriverData(dealerID.value, vehicleID.value)"
-      id="bt"
-      class="btn"
-    >
-      ADD DATA
-    </button>
-  </p>
-</table>
+<ul>
+  <li *ngIf="dealers">
+    <table class="center-block" border="2">
+      <tr class="txt">
+        <td>
+          Enter Dealer ID
+          <input type="number" #dealerID id="dealerID" required />
+        </td>
+        <td class="txt">
+          Enter Vehicle ID
+          <input type="text" #vehicleID id="vehicleID" required />
+        </td>
+      </tr>
+      <p>
+        <button
+          type="submit"
+          (click)="insertDriverData(dealerID.value, vehicleID.value)"
+          id="bt"
+          class="btn"
+        >
+          ADD DATA
+        </button>
+      </p>
+      <tr>
+        <th>Dealer ID</th>
+        <th>Vehicle ID</th>
+      </tr>
+      <tr *ngFor="let dealer of dealers">
+        <td style="text-align:center">
+          {{ dealer.dealerid }}
+        </td>
+        <td style="text-align:center">
+          {{ dealer.vehicleid }}
+        </td>
+      </tr>
+    </table>
+  </li>
+</ul>

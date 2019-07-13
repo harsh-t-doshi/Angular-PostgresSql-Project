@@ -1,19 +1,17 @@
 .btn {
-  margin-left: 154px;
   font-size: 19px;
+  margin-left: 250px;
 }
 .txt {
-  margin-left: 120px;
+  margin-left: 20px;
 }
 .center-block {
-  margin-left: 500px;
+  margin-left: 390px;
   text-align: center;
   align-content: center;
   align-items: center;
 }
-table,
-td,
-th {
+table {
   border: 1px solid black;
   width: 700px;
 }
