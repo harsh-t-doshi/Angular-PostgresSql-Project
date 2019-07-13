@@ -14,6 +14,9 @@ Install Postgres 11 Server on local. And configure `pg_hba.conf` file to connect
 host    all             all             127.0.0.1/32            trust
 ```
 
+### Import Database
+
+Create the database with the name `DealerInfo` and Import the `database/backup.sql` in the Postgres SQL.
 ## Nodejs Server
 
 Run `node app.js` in the /api folder. This will start the NodeJs server on 3000 Port.
